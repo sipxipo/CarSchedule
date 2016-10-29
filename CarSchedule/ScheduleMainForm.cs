@@ -394,7 +394,7 @@ namespace CarSchedule
 
                 if (lst_carwashing.DataSource == null || (lst_carwashing.DataSource != null && data.Count != ((List<CarWashingSchedule>)lst_carwashing.DataSource).Count))
                 {
-                    lst_carwashing.DataSource = data.OrderBy(x => x.BookedTime).Where(x => x.WashingStatus == WashingStatus.Washing).ToList();
+                    lst_carwashing.DataSource = data.OrderBy(x => x.BookedTime).Where(x => x.WashingStatus == WashingStatus.Finished).ToList();
 
                 }
                 lst_carwashing.DisplayMember = "CarNumber";
