@@ -98,7 +98,7 @@ namespace CarSchedule
             dgrid_Schedule.Columns["BookedTime"].DefaultCellStyle.Format = "hh:mm tt";
             dgrid_Schedule.Columns["FinishTime"].DefaultCellStyle.Format = "hh:mm tt";
             dgrid_Schedule.Columns["WashTime"].DefaultCellStyle.Format = "hh:mm tt";
-            dgrid_Schedule.Columns["Date"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgrid_Schedule.Columns["Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
             TypeDescriptor.AddProvider((new MyTypeDescriptionProvider<WashMan>(typeof(CarWashingSchedule))), typeof(CarWashingSchedule));
 
             #endregion
@@ -305,7 +305,7 @@ namespace CarSchedule
                             if (currentSlot == null)
                             {
                                 var button1 = _tableLayoutPanel1.Controls.Find("btn1_" + date, true).FirstOrDefault();
-                                button1.BackColor = Color.Yellow;
+                                button1.BackColor = Color.Gold;
                                 button1.Text = txtInfo;
                                 button1.ForeColor = Color.White;
                                 button1.Tag = button.Tag.ToString() + ":" + schedule.Id;
@@ -316,7 +316,7 @@ namespace CarSchedule
                                 var layout = (TableLayoutPanel)_tableLayoutPanel1.Controls.Find("layout_mulSchedule" + date, true).FirstOrDefault();
                                 layout.ColumnCount = 2;
                                 var button2 = _tableLayoutPanel1.Controls.Find("btn2_" + date, true).FirstOrDefault();
-                                button2.BackColor = Color.Yellow;
+                                button2.BackColor = Color.Gold;
                                 button2.Text = txtInfo;
                                 button2.Visible = true;
                                 button2.ForeColor = Color.White;
@@ -687,8 +687,8 @@ namespace CarSchedule
                 Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                 // Format column D as text before pasting results, this was required for my data
-                Excel.Range rng = xlWorkSheet.get_Range("D:D").Cells;
-                rng.NumberFormat = "@";
+                Excel.Range rng = xlWorkSheet.get_Range("A:A").Cells;
+                rng.EntireColumn.NumberFormat = "MM/dd/yyyy"; ;
 
                 // Paste clipboard results to worksheet range
                 Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];

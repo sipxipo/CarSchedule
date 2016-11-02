@@ -35,57 +35,57 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tab_Analysis = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgrid_Schedule = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.group = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCarNumber = new System.Windows.Forms.TextBox();
-            this.cbb_WashMan_Analysis = new System.Windows.Forms.ComboBox();
-            this.cbb_WashingType = new System.Windows.Forms.ComboBox();
-            this.btn_Analysis = new System.Windows.Forms.Button();
-            this.btn_Excel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dPick_Date = new System.Windows.Forms.DateTimePicker();
-            this.dPick_Month = new System.Windows.Forms.DateTimePicker();
-            this.dPick_Year = new System.Windows.Forms.DateTimePicker();
-            this.chk_Date = new System.Windows.Forms.CheckBox();
-            this.chk_Month = new System.Windows.Forms.CheckBox();
             this.chk_Year = new System.Windows.Forms.CheckBox();
+            this.chk_Month = new System.Windows.Forms.CheckBox();
+            this.chk_Date = new System.Windows.Forms.CheckBox();
+            this.dPick_Year = new System.Windows.Forms.DateTimePicker();
+            this.dPick_Month = new System.Windows.Forms.DateTimePicker();
+            this.dPick_Date = new System.Windows.Forms.DateTimePicker();
+            this.btn_Excel = new System.Windows.Forms.Button();
+            this.btn_Analysis = new System.Windows.Forms.Button();
+            this.group = new System.Windows.Forms.GroupBox();
+            this.cbb_WashingType = new System.Windows.Forms.ComboBox();
+            this.cbb_WashMan_Analysis = new System.Windows.Forms.ComboBox();
+            this.txtCarNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgrid_Schedule = new System.Windows.Forms.DataGridView();
             this.tab_Schedule = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.lst_carwaiting = new System.Windows.Forms.ListBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lst_carwashing = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl = new System.Windows.Forms.Label();
-            this.lbl_WashManName = new System.Windows.Forms.Label();
-            this.lbl_Time = new System.Windows.Forms.Label();
-            this.lbl_Date = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.cbb_WashMan = new System.Windows.Forms.ComboBox();
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Refesh = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbb_WashMan = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_Date = new System.Windows.Forms.Label();
+            this.lbl_Time = new System.Windows.Forms.Label();
+            this.lbl_WashManName = new System.Windows.Forms.Label();
+            this.lbl = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.lst_carwashing = new System.Windows.Forms.ListBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lst_carwaiting = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_Analysis.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Schedule)).BeginInit();
             this.panel1.SuspendLayout();
-            this.group.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.group.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Schedule)).BeginInit();
             this.tab_Schedule.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,17 +135,6 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(1094, 677);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
-            // dgrid_Schedule
-            // 
-            this.dgrid_Schedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            this.dgrid_Schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_Schedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgrid_Schedule.Location = new System.Drawing.Point(331, 3);
-            this.dgrid_Schedule.Name = "dgrid_Schedule";
-            this.dgrid_Schedule.RowHeadersVisible = false;
-            this.dgrid_Schedule.Size = new System.Drawing.Size(760, 671);
-            this.dgrid_Schedule.TabIndex = 1;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.groupBox1);
@@ -157,99 +146,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 671);
             this.panel1.TabIndex = 0;
-            // 
-            // group
-            // 
-            this.group.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.group.Controls.Add(this.cbb_WashingType);
-            this.group.Controls.Add(this.cbb_WashMan_Analysis);
-            this.group.Controls.Add(this.txtCarNumber);
-            this.group.Controls.Add(this.label3);
-            this.group.Controls.Add(this.label2);
-            this.group.Controls.Add(this.label1);
-            this.group.Location = new System.Drawing.Point(3, 133);
-            this.group.Name = "group";
-            this.group.Size = new System.Drawing.Size(316, 129);
-            this.group.TabIndex = 1;
-            this.group.TabStop = false;
-            this.group.Text = "KHÁC";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Người Đặt :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Biển Số Xe :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Loại :";
-            // 
-            // txtCarNumber
-            // 
-            this.txtCarNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCarNumber.Location = new System.Drawing.Point(74, 50);
-            this.txtCarNumber.Name = "txtCarNumber";
-            this.txtCarNumber.Size = new System.Drawing.Size(125, 20);
-            this.txtCarNumber.TabIndex = 1;
-            // 
-            // cbb_WashMan_Analysis
-            // 
-            this.cbb_WashMan_Analysis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_WashMan_Analysis.FormattingEnabled = true;
-            this.cbb_WashMan_Analysis.Location = new System.Drawing.Point(74, 17);
-            this.cbb_WashMan_Analysis.Name = "cbb_WashMan_Analysis";
-            this.cbb_WashMan_Analysis.Size = new System.Drawing.Size(235, 21);
-            this.cbb_WashMan_Analysis.TabIndex = 2;
-            // 
-            // cbb_WashingType
-            // 
-            this.cbb_WashingType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_WashingType.FormattingEnabled = true;
-            this.cbb_WashingType.Location = new System.Drawing.Point(74, 81);
-            this.cbb_WashingType.Name = "cbb_WashingType";
-            this.cbb_WashingType.Size = new System.Drawing.Size(235, 21);
-            this.cbb_WashingType.TabIndex = 2;
-            // 
-            // btn_Analysis
-            // 
-            this.btn_Analysis.Location = new System.Drawing.Point(36, 291);
-            this.btn_Analysis.Name = "btn_Analysis";
-            this.btn_Analysis.Size = new System.Drawing.Size(75, 23);
-            this.btn_Analysis.TabIndex = 2;
-            this.btn_Analysis.Text = "Thống Kê";
-            this.btn_Analysis.UseVisualStyleBackColor = true;
-            this.btn_Analysis.Click += new System.EventHandler(this.btn_Analysis_Click);
-            // 
-            // btn_Excel
-            // 
-            this.btn_Excel.Location = new System.Drawing.Point(117, 291);
-            this.btn_Excel.Name = "btn_Excel";
-            this.btn_Excel.Size = new System.Drawing.Size(75, 23);
-            this.btn_Excel.TabIndex = 2;
-            this.btn_Excel.Text = "Xuất Excel ";
-            this.btn_Excel.UseVisualStyleBackColor = true;
-            this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
             // 
             // groupBox1
             // 
@@ -268,39 +164,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc dữ liệu theo";
             // 
-            // dPick_Date
+            // chk_Year
             // 
-            this.dPick_Date.CustomFormat = "dd/MM/yyyy";
-            this.dPick_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dPick_Date.Location = new System.Drawing.Point(95, 21);
-            this.dPick_Date.Name = "dPick_Date";
-            this.dPick_Date.Size = new System.Drawing.Size(119, 20);
-            this.dPick_Date.TabIndex = 0;
-            this.dPick_Date.Tag = "Date";
+            this.chk_Year.AutoSize = true;
+            this.chk_Year.Location = new System.Drawing.Point(9, 81);
+            this.chk_Year.Name = "chk_Year";
+            this.chk_Year.Size = new System.Drawing.Size(48, 17);
+            this.chk_Year.TabIndex = 1;
+            this.chk_Year.Tag = "Year";
+            this.chk_Year.Text = "Năm";
+            this.chk_Year.UseVisualStyleBackColor = true;
+            this.chk_Year.Click += new System.EventHandler(this.chk_Date_Click);
             // 
-            // dPick_Month
+            // chk_Month
             // 
-            this.dPick_Month.CustomFormat = "MM";
-            this.dPick_Month.Enabled = false;
-            this.dPick_Month.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dPick_Month.Location = new System.Drawing.Point(95, 51);
-            this.dPick_Month.Name = "dPick_Month";
-            this.dPick_Month.ShowUpDown = true;
-            this.dPick_Month.Size = new System.Drawing.Size(46, 20);
-            this.dPick_Month.TabIndex = 0;
-            this.dPick_Month.Tag = "Month";
-            // 
-            // dPick_Year
-            // 
-            this.dPick_Year.CustomFormat = "yyyy";
-            this.dPick_Year.Enabled = false;
-            this.dPick_Year.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dPick_Year.Location = new System.Drawing.Point(95, 80);
-            this.dPick_Year.Name = "dPick_Year";
-            this.dPick_Year.ShowUpDown = true;
-            this.dPick_Year.Size = new System.Drawing.Size(104, 20);
-            this.dPick_Year.TabIndex = 0;
-            this.dPick_Year.Tag = "Year";
+            this.chk_Month.AutoSize = true;
+            this.chk_Month.Location = new System.Drawing.Point(9, 52);
+            this.chk_Month.Name = "chk_Month";
+            this.chk_Month.Size = new System.Drawing.Size(57, 17);
+            this.chk_Month.TabIndex = 1;
+            this.chk_Month.Tag = "Month";
+            this.chk_Month.Text = "Tháng";
+            this.chk_Month.UseVisualStyleBackColor = true;
+            this.chk_Month.Click += new System.EventHandler(this.chk_Date_Click);
             // 
             // chk_Date
             // 
@@ -316,29 +202,143 @@
             this.chk_Date.UseVisualStyleBackColor = true;
             this.chk_Date.Click += new System.EventHandler(this.chk_Date_Click);
             // 
-            // chk_Month
+            // dPick_Year
             // 
-            this.chk_Month.AutoSize = true;
-            this.chk_Month.Location = new System.Drawing.Point(9, 52);
-            this.chk_Month.Name = "chk_Month";
-            this.chk_Month.Size = new System.Drawing.Size(57, 17);
-            this.chk_Month.TabIndex = 1;
-            this.chk_Month.Tag = "Month";
-            this.chk_Month.Text = "Tháng";
-            this.chk_Month.UseVisualStyleBackColor = true;
-            this.chk_Month.Click += new System.EventHandler(this.chk_Date_Click);
+            this.dPick_Year.CustomFormat = "yyyy";
+            this.dPick_Year.Enabled = false;
+            this.dPick_Year.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dPick_Year.Location = new System.Drawing.Point(95, 80);
+            this.dPick_Year.Name = "dPick_Year";
+            this.dPick_Year.ShowUpDown = true;
+            this.dPick_Year.Size = new System.Drawing.Size(104, 20);
+            this.dPick_Year.TabIndex = 0;
+            this.dPick_Year.Tag = "Year";
             // 
-            // chk_Year
+            // dPick_Month
             // 
-            this.chk_Year.AutoSize = true;
-            this.chk_Year.Location = new System.Drawing.Point(9, 81);
-            this.chk_Year.Name = "chk_Year";
-            this.chk_Year.Size = new System.Drawing.Size(48, 17);
-            this.chk_Year.TabIndex = 1;
-            this.chk_Year.Tag = "Year";
-            this.chk_Year.Text = "Năm";
-            this.chk_Year.UseVisualStyleBackColor = true;
-            this.chk_Year.Click += new System.EventHandler(this.chk_Date_Click);
+            this.dPick_Month.CustomFormat = "MM";
+            this.dPick_Month.Enabled = false;
+            this.dPick_Month.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dPick_Month.Location = new System.Drawing.Point(95, 51);
+            this.dPick_Month.Name = "dPick_Month";
+            this.dPick_Month.ShowUpDown = true;
+            this.dPick_Month.Size = new System.Drawing.Size(46, 20);
+            this.dPick_Month.TabIndex = 0;
+            this.dPick_Month.Tag = "Month";
+            // 
+            // dPick_Date
+            // 
+            this.dPick_Date.CustomFormat = "dd/MM/yyyy";
+            this.dPick_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dPick_Date.Location = new System.Drawing.Point(95, 21);
+            this.dPick_Date.Name = "dPick_Date";
+            this.dPick_Date.Size = new System.Drawing.Size(119, 20);
+            this.dPick_Date.TabIndex = 0;
+            this.dPick_Date.Tag = "Date";
+            // 
+            // btn_Excel
+            // 
+            this.btn_Excel.Location = new System.Drawing.Point(117, 291);
+            this.btn_Excel.Name = "btn_Excel";
+            this.btn_Excel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Excel.TabIndex = 2;
+            this.btn_Excel.Text = "Xuất Excel ";
+            this.btn_Excel.UseVisualStyleBackColor = true;
+            this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
+            // 
+            // btn_Analysis
+            // 
+            this.btn_Analysis.Location = new System.Drawing.Point(36, 291);
+            this.btn_Analysis.Name = "btn_Analysis";
+            this.btn_Analysis.Size = new System.Drawing.Size(75, 23);
+            this.btn_Analysis.TabIndex = 2;
+            this.btn_Analysis.Text = "Thống Kê";
+            this.btn_Analysis.UseVisualStyleBackColor = true;
+            this.btn_Analysis.Click += new System.EventHandler(this.btn_Analysis_Click);
+            // 
+            // group
+            // 
+            this.group.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.group.Controls.Add(this.cbb_WashingType);
+            this.group.Controls.Add(this.cbb_WashMan_Analysis);
+            this.group.Controls.Add(this.txtCarNumber);
+            this.group.Controls.Add(this.label3);
+            this.group.Controls.Add(this.label2);
+            this.group.Controls.Add(this.label1);
+            this.group.Location = new System.Drawing.Point(3, 133);
+            this.group.Name = "group";
+            this.group.Size = new System.Drawing.Size(316, 129);
+            this.group.TabIndex = 1;
+            this.group.TabStop = false;
+            this.group.Text = "KHÁC";
+            // 
+            // cbb_WashingType
+            // 
+            this.cbb_WashingType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_WashingType.FormattingEnabled = true;
+            this.cbb_WashingType.Location = new System.Drawing.Point(74, 81);
+            this.cbb_WashingType.Name = "cbb_WashingType";
+            this.cbb_WashingType.Size = new System.Drawing.Size(235, 21);
+            this.cbb_WashingType.TabIndex = 2;
+            // 
+            // cbb_WashMan_Analysis
+            // 
+            this.cbb_WashMan_Analysis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_WashMan_Analysis.FormattingEnabled = true;
+            this.cbb_WashMan_Analysis.Location = new System.Drawing.Point(74, 17);
+            this.cbb_WashMan_Analysis.Name = "cbb_WashMan_Analysis";
+            this.cbb_WashMan_Analysis.Size = new System.Drawing.Size(235, 21);
+            this.cbb_WashMan_Analysis.TabIndex = 2;
+            // 
+            // txtCarNumber
+            // 
+            this.txtCarNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCarNumber.Location = new System.Drawing.Point(74, 50);
+            this.txtCarNumber.Name = "txtCarNumber";
+            this.txtCarNumber.Size = new System.Drawing.Size(125, 20);
+            this.txtCarNumber.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Loại :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Biển Số Xe :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Người Đặt :";
+            // 
+            // dgrid_Schedule
+            // 
+            this.dgrid_Schedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.dgrid_Schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_Schedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgrid_Schedule.Location = new System.Drawing.Point(331, 3);
+            this.dgrid_Schedule.Name = "dgrid_Schedule";
+            this.dgrid_Schedule.RowHeadersVisible = false;
+            this.dgrid_Schedule.Size = new System.Drawing.Size(760, 671);
+            this.dgrid_Schedule.TabIndex = 1;
             // 
             // tab_Schedule
             // 
@@ -380,72 +380,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1088, 95);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.lst_carwashing, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label17, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label16, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lst_carwaiting, 0, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(655, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(430, 89);
-            this.tableLayoutPanel5.TabIndex = 3;
-            // 
-            // lst_carwaiting
-            // 
-            this.lst_carwaiting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lst_carwaiting.FormattingEnabled = true;
-            this.lst_carwaiting.Location = new System.Drawing.Point(3, 29);
-            this.lst_carwaiting.Name = "lst_carwaiting";
-            this.lst_carwaiting.Size = new System.Drawing.Size(209, 57);
-            this.lst_carwaiting.TabIndex = 2;
-            this.lst_carwaiting.SelectedIndexChanged += new System.EventHandler(this.lst_carwaiting_SelectedIndexChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Navy;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(3, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(209, 26);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "XE TIẾP THEO";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Green;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(218, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(209, 26);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "XE ĐÃ RỬA";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lst_carwashing
-            // 
-            this.lst_carwashing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lst_carwashing.FormattingEnabled = true;
-            this.lst_carwashing.Location = new System.Drawing.Point(218, 29);
-            this.lst_carwashing.Name = "lst_carwashing";
-            this.lst_carwashing.Size = new System.Drawing.Size(209, 57);
-            this.lst_carwashing.TabIndex = 3;
-            this.lst_carwashing.SelectedIndexChanged += new System.EventHandler(this.lst_carwaiting_SelectedIndexChanged);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -463,6 +397,70 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(646, 89);
             this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // btn_Refesh
+            // 
+            this.btn_Refesh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Refesh.Location = new System.Drawing.Point(584, 3);
+            this.btn_Refesh.Name = "btn_Refesh";
+            this.btn_Refesh.Size = new System.Drawing.Size(59, 38);
+            this.btn_Refesh.TabIndex = 19;
+            this.btn_Refesh.Text = "CẬP NHẬT TIẾN ĐỘ";
+            this.btn_Refesh.UseVisualStyleBackColor = true;
+            this.btn_Refesh.Click += new System.EventHandler(this.btnRefesh_Click_1);
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Delete.Location = new System.Drawing.Point(584, 47);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(59, 39);
+            this.btn_Delete.TabIndex = 4;
+            this.btn_Delete.Text = "XÓA";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.36659F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.63341F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Controls.Add(this.cbb_WashMan, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.checkBox1, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 47);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(575, 39);
+            this.tableLayoutPanel6.TabIndex = 8;
+            // 
+            // cbb_WashMan
+            // 
+            this.cbb_WashMan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbb_WashMan.Enabled = false;
+            this.cbb_WashMan.FormattingEnabled = true;
+            this.cbb_WashMan.IntegralHeight = false;
+            this.cbb_WashMan.Location = new System.Drawing.Point(3, 3);
+            this.cbb_WashMan.Name = "cbb_WashMan";
+            this.cbb_WashMan.Size = new System.Drawing.Size(404, 21);
+            this.cbb_WashMan.TabIndex = 7;
+            this.cbb_WashMan.SelectedIndexChanged += new System.EventHandler(this.cbb_WashMan_SelectedIndexChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(413, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(77, 17);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Xem tất cả";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // tableLayoutPanel7
             // 
@@ -484,32 +482,19 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(575, 38);
             this.tableLayoutPanel7.TabIndex = 9;
             // 
-            // lbl
+            // lbl_Date
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl.Location = new System.Drawing.Point(170, 0);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(168, 38);
-            this.lbl.TabIndex = 20;
-            this.lbl.Text = "TIẾN ĐỘ RỬA XE";
-            this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_WashManName
-            // 
-            this.lbl_WashManName.AutoSize = true;
-            this.lbl_WashManName.BackColor = System.Drawing.SystemColors.Info;
-            this.lbl_WashManName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_WashManName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_WashManName.Location = new System.Drawing.Point(3, 0);
-            this.lbl_WashManName.Name = "lbl_WashManName";
-            this.lbl_WashManName.Size = new System.Drawing.Size(161, 38);
-            this.lbl_WashManName.TabIndex = 21;
-            this.lbl_WashManName.Text = "Tên Cố Vấn";
-            this.lbl_WashManName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Date.AutoSize = true;
+            this.lbl_Date.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lbl_Date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Date.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_Date.Location = new System.Drawing.Point(344, 0);
+            this.lbl_Date.Name = "lbl_Date";
+            this.lbl_Date.Size = new System.Drawing.Size(110, 38);
+            this.lbl_Date.TabIndex = 23;
+            this.lbl_Date.Text = "10/10/2016";
+            this.lbl_Date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Time
             // 
@@ -525,83 +510,98 @@
             this.lbl_Time.Text = "12:00";
             this.lbl_Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_Date
+            // lbl_WashManName
             // 
-            this.lbl_Date.AutoSize = true;
-            this.lbl_Date.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lbl_Date.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Date.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_Date.Location = new System.Drawing.Point(344, 0);
-            this.lbl_Date.Name = "lbl_Date";
-            this.lbl_Date.Size = new System.Drawing.Size(110, 38);
-            this.lbl_Date.TabIndex = 23;
-            this.lbl_Date.Text = "10/10/2016";
-            this.lbl_Date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_WashManName.AutoSize = true;
+            this.lbl_WashManName.BackColor = System.Drawing.SystemColors.Info;
+            this.lbl_WashManName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_WashManName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_WashManName.Location = new System.Drawing.Point(3, 0);
+            this.lbl_WashManName.Name = "lbl_WashManName";
+            this.lbl_WashManName.Size = new System.Drawing.Size(161, 38);
+            this.lbl_WashManName.TabIndex = 21;
+            this.lbl_WashManName.Text = "Tên Cố Vấn";
+            this.lbl_WashManName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel6
+            // lbl
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.36659F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.63341F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Controls.Add(this.cbb_WashMan, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.checkBox1, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 47);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(575, 39);
-            this.tableLayoutPanel6.TabIndex = 8;
+            this.lbl.AutoSize = true;
+            this.lbl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl.Location = new System.Drawing.Point(170, 0);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(168, 38);
+            this.lbl.TabIndex = 20;
+            this.lbl.Text = "TIẾN ĐỘ RỬA XE";
+            this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox1
+            // tableLayoutPanel5
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(413, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(77, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Xem tất cả";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.lst_carwashing, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label17, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lst_carwaiting, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(655, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(430, 89);
+            this.tableLayoutPanel5.TabIndex = 3;
             // 
-            // cbb_WashMan
+            // lst_carwashing
             // 
-            this.cbb_WashMan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbb_WashMan.Enabled = false;
-            this.cbb_WashMan.FormattingEnabled = true;
-            this.cbb_WashMan.IntegralHeight = false;
-            this.cbb_WashMan.Location = new System.Drawing.Point(3, 3);
-            this.cbb_WashMan.Name = "cbb_WashMan";
-            this.cbb_WashMan.Size = new System.Drawing.Size(404, 21);
-            this.cbb_WashMan.TabIndex = 7;
-            this.cbb_WashMan.SelectedIndexChanged += new System.EventHandler(this.cbb_WashMan_SelectedIndexChanged);
+            this.lst_carwashing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lst_carwashing.FormattingEnabled = true;
+            this.lst_carwashing.Location = new System.Drawing.Point(218, 29);
+            this.lst_carwashing.Name = "lst_carwashing";
+            this.lst_carwashing.Size = new System.Drawing.Size(209, 57);
+            this.lst_carwashing.TabIndex = 3;
+            this.lst_carwashing.SelectedIndexChanged += new System.EventHandler(this.lst_carwaiting_SelectedIndexChanged);
             // 
-            // btn_Delete
+            // label17
             // 
-            this.btn_Delete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Delete.Location = new System.Drawing.Point(584, 47);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(59, 39);
-            this.btn_Delete.TabIndex = 4;
-            this.btn_Delete.Text = "XÓA";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Green;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.Control;
+            this.label17.Location = new System.Drawing.Point(218, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(209, 26);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "XE ĐÃ RỬA";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_Refesh
+            // label16
             // 
-            this.btn_Refesh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Refesh.Location = new System.Drawing.Point(584, 3);
-            this.btn_Refesh.Name = "btn_Refesh";
-            this.btn_Refesh.Size = new System.Drawing.Size(59, 38);
-            this.btn_Refesh.TabIndex = 19;
-            this.btn_Refesh.Text = "CẬP NHẬT TIẾN ĐỘ";
-            this.btn_Refesh.UseVisualStyleBackColor = true;
-            this.btn_Refesh.Click += new System.EventHandler(this.btnRefesh_Click_1);
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Navy;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.Control;
+            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(209, 26);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "XE TIẾP THEO";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lst_carwaiting
+            // 
+            this.lst_carwaiting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lst_carwaiting.FormattingEnabled = true;
+            this.lst_carwaiting.Location = new System.Drawing.Point(3, 29);
+            this.lst_carwaiting.Name = "lst_carwaiting";
+            this.lst_carwaiting.Size = new System.Drawing.Size(209, 57);
+            this.lst_carwaiting.TabIndex = 2;
+            this.lst_carwaiting.SelectedIndexChanged += new System.EventHandler(this.lst_carwaiting_SelectedIndexChanged);
             // 
             // tabControl1
             // 
@@ -629,22 +629,22 @@
             this.Text = "Tiến Độ Rửa Xe";
             this.tab_Analysis.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Schedule)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.group.ResumeLayout(false);
-            this.group.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.group.ResumeLayout(false);
+            this.group.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Schedule)).EndInit();
             this.tab_Schedule.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
