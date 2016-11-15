@@ -1,19 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarScheduleCore.Model
 {
+    public class EnumDisplayNameAttribute : Attribute
+    {
+        private string _displayName;
+        public string DisplayName
+        {
+            get { return _displayName; }
+            set { _displayName = value; }
+        }
+    }
+
     public enum GuestStatus
     {
-        Waiting, Gone
+        [EnumDisplayName(DisplayName = "Khách đang chờ")]
+        Waiting,
+        [EnumDisplayName(DisplayName = "Khách về")]
+        Gone
     }
 
     public enum WashingType
     {
-        All,Normal,General,Cleanup,Paint
+        [EnumDisplayName(DisplayName = "Tất cả")]
+        All,
+        [EnumDisplayName(DisplayName = "Bảo dưỡng")]
+        Normal,
+        [EnumDisplayName(DisplayName = "Sửa chữa chung")]
+        General,
+        [EnumDisplayName(DisplayName = "Diệt khuẩn")]
+        Cleanup,
+        [EnumDisplayName(DisplayName = "Đồng sơn")]
+        Paint
     }
 
     public enum WashingStatus
@@ -31,7 +49,7 @@ namespace CarScheduleCore.Model
         public DateTime? WashTime { get; set; }
         public DateTime? FinishTime { get; set; }
         public GuestStatus? GuestStatus { get; set; }
-        public WashingType? WashingType { get; set; } 
+        public WashingType? WashingType { get; set; }
         public WashingStatus WashingStatus { get; set; }
         public virtual WashMan WashMan { get; set; }
 
@@ -56,7 +74,12 @@ namespace CarScheduleCore.Model
         public DateTime BookedTime { get; set; }
         public DateTime? WashTime { get; set; }
         public DateTime? FinishTime { get; set; }
-        public GuestStatus? GuestStatus { get; set; }
+        public GuestStatus? GuestStatus
+        {
+            get
+                 ;
+            set;
+        }
         public WashingType? WashingType { get; set; }
         public WashingStatus WashingStatus { get; set; }
         public virtual WashMan WashMan { get; set; }

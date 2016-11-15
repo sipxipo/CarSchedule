@@ -339,6 +339,7 @@
             this.dgrid_Schedule.RowHeadersVisible = false;
             this.dgrid_Schedule.Size = new System.Drawing.Size(760, 671);
             this.dgrid_Schedule.TabIndex = 1;
+            this.dgrid_Schedule.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
             // 
             // tab_Schedule
             // 

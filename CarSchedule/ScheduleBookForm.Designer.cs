@@ -117,10 +117,10 @@
             this.rdo_Normal.AutoSize = true;
             this.rdo_Normal.Location = new System.Drawing.Point(163, 42);
             this.rdo_Normal.Name = "rdo_Normal";
-            this.rdo_Normal.Size = new System.Drawing.Size(86, 17);
+            this.rdo_Normal.Size = new System.Drawing.Size(77, 17);
             this.rdo_Normal.TabIndex = 0;
             this.rdo_Normal.TabStop = true;
-            this.rdo_Normal.Text = "Bình Thường";
+            this.rdo_Normal.Text = "Bảo dưỡng";
             this.rdo_Normal.UseVisualStyleBackColor = true;
             // 
             // rdo_Cleanup

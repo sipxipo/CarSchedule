@@ -36,7 +36,7 @@ namespace CarSchedule
                 _timeSlot = value;
             }
         }
-      
+
         #endregion
 
         public ScheduleMainForm(WashManForm washManForm)
@@ -109,7 +109,6 @@ namespace CarSchedule
             timer1.Start();
             timer2.Start();
         }
-   
 
         #region Call API  
 
@@ -130,7 +129,6 @@ namespace CarSchedule
 
             }
         }
-
 
         public async void DeleteSchedule(int id)
         {
@@ -173,12 +171,8 @@ namespace CarSchedule
                 }
                 else
                 {
-                    MessageBox.Show(result.StatusCode.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    Console.WriteLine("Creat Schedule fail :" + result.StatusCode.ToString());
                 }
-
-
-
             }
         }
 
@@ -201,11 +195,8 @@ namespace CarSchedule
                 }
                 else
                 {
-                    MessageBox.Show(result.StatusCode.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    Console.WriteLine("Search Schedule fail :" + result.StatusCode.ToString());
                 }
-
-
 
             }
         }
@@ -215,15 +206,14 @@ namespace CarSchedule
             using (var client = new HttpClient())
             {
                 //update late schedule
-                foreach (var schedule in _mainSchedules.Where(x => x.BookedTime < DateTime.Now && x.WashingStatus == WashingStatus.New))
+                foreach (var schedule in _mainSchedules.Where(x => x.BookedTime.AddMinutes(2) < DateTime.Now && x.WashingStatus == WashingStatus.New))
                 {
                     schedule.WashingStatus = WashingStatus.Late;
                     var updateContent = new StringContent(JsonConvert.SerializeObject(schedule), Encoding.UTF8, "application/json");
                     var updateResult = await client.PutAsync(String.Format("{0}/{1}?id={2}", Common.CARWASHING_URI, "PutCarWashing", schedule.Id), updateContent);
                     if (!updateResult.IsSuccessStatusCode)
                     {
-                        MessageBox.Show(updateResult.StatusCode.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                        Console.WriteLine("Update Schedule fail :" + updateResult.StatusCode.ToString());
 
                     }
                     else
@@ -234,15 +224,13 @@ namespace CarSchedule
                         button.Text = string.Format("{0}\n{1}\n{2}\n{3}", schedule.CarNumber, cbb_WashMan.Items.OfType<WashMan>().FirstOrDefault(x => x.Id == schedule.WashManId).Name, schedule.GuestStatus, schedule.WashingType);
 
                         button.ForeColor = Color.White;
-                        button.Tag = button.Tag.ToString() + ":" + schedule.Id;
+                        button.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
                     }
                 }
 
 
             }
         }
-
-
         #endregion
 
         #region Helper 
@@ -294,7 +282,8 @@ namespace CarSchedule
                 foreach (var schedule in filter)
                 {
                     var button = _tableLayoutPanel1.Controls.Find("btn1_" + schedule.BookedTime.ToString("HH:mm"), true).FirstOrDefault();
-                    var txtInfo = string.Format("{0}\n{1}\n{2}\n{3}", schedule.CarNumber, cbb_WashMan.Items.OfType<WashMan>().FirstOrDefault(x => x.Id == schedule.WashManId).Name, schedule.GuestStatus, schedule.WashingType);
+                    var txtInfo = string.Format("{0}\n{1}\n{2}\n{3}", schedule.CarNumber, cbb_WashMan.Items.OfType<WashMan>().FirstOrDefault(x => x.Id == schedule.WashManId).Name, schedule.GuestStatus.DisplayName(), schedule.WashingType.DisplayName());
+                    ToolTip toolTip = new ToolTip();
                     switch (schedule.WashingStatus)
                     {
                         case WashingStatus.Washing:
@@ -308,8 +297,8 @@ namespace CarSchedule
                                 button1.BackColor = Color.Gold;
                                 button1.Text = txtInfo;
                                 button1.ForeColor = Color.White;
-                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id;
-
+                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
+                                toolTip.SetToolTip(button1, txtInfo);
                             }
                             else
                             {
@@ -320,7 +309,8 @@ namespace CarSchedule
                                 button2.Text = txtInfo;
                                 button2.Visible = true;
                                 button2.ForeColor = Color.White;
-                                button2.Tag = button.Tag.ToString() + ":" + schedule.Id;
+                                button2.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
+                                toolTip.SetToolTip(button2, txtInfo);
                             }
 
                             break;
@@ -335,7 +325,9 @@ namespace CarSchedule
                                 button1.BackColor = Color.Green;
                                 button1.Text = txtInfo;
                                 button1.ForeColor = Color.White;
-                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id;
+                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
+                                toolTip = new ToolTip();
+                                toolTip.SetToolTip(button1, txtInfo);
                             }
                             else
                             {
@@ -346,8 +338,8 @@ namespace CarSchedule
                                 button2.Text = txtInfo;
                                 button2.Visible = true;
                                 button2.ForeColor = Color.White;
-                                button2.Tag = button.Tag.ToString() + ":" + schedule.Id;
-
+                                button2.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
+                                toolTip.SetToolTip(button2, txtInfo);
                             }
                             break;
 
@@ -355,23 +347,23 @@ namespace CarSchedule
                             button.BackColor = Color.Blue;
                             button.Text = txtInfo;
                             button.ForeColor = Color.White;
-                            button.Tag = button.Tag.ToString() + ":" + schedule.Id;
-
+                            button.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
+                            toolTip.SetToolTip(button, txtInfo);
                             break;
 
                         case WashingStatus.Late:
                             button.BackColor = Color.Red;
                             button.Text = txtInfo;
                             button.ForeColor = Color.White;
-                            button.Tag = button.Tag.ToString() + ":" + schedule.Id;
-
+                            button.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
+                            toolTip.SetToolTip(button, txtInfo);
                             break;
                         default:
                             button.BackColor = SystemColors.Control;
                             button.Text = button.Tag.ToString();
                             button.ForeColor = Color.Black;
                             button.Tag = button.Tag.ToString();
-
+                            toolTip.SetToolTip(button, txtInfo);
                             break;
 
                     }
@@ -405,7 +397,7 @@ namespace CarSchedule
         }
         private void CreateTimeSlot()
         {
-            var colNum = 10;
+            var colNum = 9;
             var rowNum = 60 / Common.TIME_RANGE + 1;
             _tableLayoutPanel1.AutoScroll = true;
             _tableLayoutPanel1.AutoSize = true;
@@ -424,8 +416,8 @@ namespace CarSchedule
             for (int i = 0; i < colNum - 1; i++)
             {
                 //add hour label
-                _tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / colNum));
-                var hour = (i + 8).ToString("00");
+                var hour = i + 8 < Common.BREAK_TIME ? (i + 8).ToString("00") : (i + 8 + 1).ToString("00");
+                _tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90f / colNum));
                 var lbl_h = new Label();
                 lbl_h.AutoSize = true;
                 lbl_h.Dock = DockStyle.Fill;
@@ -441,21 +433,22 @@ namespace CarSchedule
 
                 for (int j = 0; j < rowNum - 1; j++)
                 {
+                    var minute = (j * Common.TIME_RANGE).ToString("00");
                     if (i == 0)
                     {
-                        //add minute label
-                        _tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 90 / rowNum));
-                        var minitute = (j * Common.TIME_RANGE).ToString("00");
+                        //add minute label   
                         var lbl_m = new Label();
                         lbl_m.AutoSize = true;
                         lbl_m.Dock = DockStyle.Fill;
                         lbl_m.Font = new Font("Microsoft Sans Serif", 2 * Common.TIME_RANGE > 30 ? 25F : 2F * Common.TIME_RANGE, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                         lbl_m.ForeColor = Color.Navy;
-                        lbl_m.Name = "lbl_m_" + minitute;
+                        lbl_m.Name = "lbl_m_" + minute;
                         lbl_m.Size = new Size(114, 58);
                         lbl_m.TabIndex = 11;
-                        lbl_m.Text = minitute;
+                        lbl_m.Text = minute;
                         lbl_m.TextAlign = ContentAlignment.MiddleCenter;
+
+                        _tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 90 / rowNum));
                         _tableLayoutPanel1.Controls.Add(lbl_m, 0, j + 1);
                     }
 
@@ -465,7 +458,7 @@ namespace CarSchedule
                     layout_mulSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
                     layout_mulSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
                     layout_mulSchedule.Dock = DockStyle.Fill;
-                    layout_mulSchedule.Name = "layout_mulSchedule" + (i + 8).ToString("00") + ":" + (j * Common.TIME_RANGE).ToString("00");
+                    layout_mulSchedule.Name = "layout_mulSchedule" + hour + ":" + minute;
                     layout_mulSchedule.RowCount = 1;
                     layout_mulSchedule.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
                     layout_mulSchedule.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -474,25 +467,24 @@ namespace CarSchedule
                     {
                         Dock = DockStyle.Fill,
                         Location = new Point(522, 541),
-                        Name = "btn1_" + (i + 8).ToString("00") + ":" + (j * Common.TIME_RANGE).ToString("00"),
+                        Name = "btn1_" + hour + ":" + minute,
                         Size = new Size(110, 94),
                         TabIndex = int.Parse(i.ToString() + j.ToString()),
-                        Text = (i + 8).ToString("00") + ":" + (j * Common.TIME_RANGE).ToString("00"),
-                        Tag = (i + 8).ToString("00") + ":" + (j * Common.TIME_RANGE).ToString("00"),
+                        Text = hour + ":" + minute,
+                        Tag = hour + ":" + minute,
                         BackColor = SystemColors.Control,
                         Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
-
 
                     };
                     var button2 = new Button
                     {
                         Dock = DockStyle.Fill,
                         Location = new Point(522, 541),
-                        Name = "btn2_" + (i + 8).ToString("00") + ":" + (j * Common.TIME_RANGE).ToString("00"),
+                        Name = "btn2_" + hour + ":" + minute,
                         Size = new Size(110, 94),
                         TabIndex = int.Parse(i.ToString() + j.ToString()),
-                        Text = (i + 8).ToString("00") + ":" + (j * Common.TIME_RANGE).ToString("00"),
-                        Tag = (i + 8).ToString("00") + ":" + (j * Common.TIME_RANGE).ToString("00"),
+                        Text = hour + ":" + minute,
+                        Tag = hour + ":" + minute,
                         Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
                         BackColor = SystemColors.Control,
                         Visible = false
@@ -547,12 +539,19 @@ namespace CarSchedule
         {
             var button = (Button)sender;
             if (button == null) return;
+
+
             if (TimeSlot == null || TimeSlot.Count() < 3)
             {
                 MessageBox.Show("Vui lòng chọn giờ hợp lệ !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            if (TimeSlot[3] != WashManForm.SelectedWashMan.Id.ToString())
+            {
+                MessageBox.Show("Chỉ cho phép xóa lịch rửa xe của cố vấn đã đặt !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DeleteSchedule(int.Parse(TimeSlot[2]));
         }
 
@@ -588,8 +587,6 @@ namespace CarSchedule
             }
 
         }
-
-
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -668,7 +665,6 @@ namespace CarSchedule
 
         }
 
-
         private void btn_Excel_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -733,6 +729,16 @@ namespace CarSchedule
         {
             GetAllSchedule();
             UpdateLateSchedule();
+        }
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //get display name of enum  to datagridview 
+            DataGridView dataGridView = sender as DataGridView;
+            if (dataGridView == null) return;
+            if (dataGridView.Columns[e.ColumnIndex].Name == "WashingType")
+            {
+                e.Value = ((WashingType)e.Value).DisplayName();
+            }
         }
 
         #endregion

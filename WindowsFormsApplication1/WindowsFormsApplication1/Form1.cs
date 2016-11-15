@@ -40,6 +40,8 @@ namespace CarScheduleCore
             dataGridView1.Columns["CarNumber"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns["BookedTime"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns["WashingType"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns["BookedTime"].DefaultCellStyle.Format = "hh:mm tt";
+         
             #endregion
 
             #region Washing Schedule GridView 
@@ -59,6 +61,7 @@ namespace CarScheduleCore
             dataGridView2.Columns["CarNumber"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView2.Columns["WashTime"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView2.Columns["WashingType"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView2.Columns["WashTime"].DefaultCellStyle.Format = "hh:mm tt";
 
             #endregion
 
@@ -86,7 +89,28 @@ namespace CarScheduleCore
             dataGridView3.Columns["WashTime"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView3.Columns["FinishTime"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView3.Columns["WashingType"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView3.Columns["BookedTime"].DefaultCellStyle.Format = "hh:mm tt";
+            dataGridView3.Columns["FinishTime"].DefaultCellStyle.Format = "hh:mm tt";
+            dataGridView3.Columns["WashTime"].DefaultCellStyle.Format = "hh:mm tt";
+            #endregion
 
+            #region Late Schedule GridView 
+            dataGridView4.AutoGenerateColumns = false;
+            dataGridView4.Columns.Add("WashMan", "Người Đặt");
+            dataGridView4.Columns.Add("CarNumber", "Biển Số");
+            dataGridView4.Columns.Add("BookedTime", "Giờ Đặt");
+            dataGridView4.Columns.Add("WashingType", "Loại");
+
+            dataGridView4.Columns["WashMan"].DataPropertyName = "WashMan_Name";
+            dataGridView4.Columns["CarNumber"].DataPropertyName = "CarNumber";
+            dataGridView4.Columns["BookedTime"].DataPropertyName = "BookedTime";
+            dataGridView4.Columns["WashingType"].DataPropertyName = "WashingType";
+            TypeDescriptor.AddProvider((new MyTypeDescriptionProvider<WashMan>(typeof(CarWashingSchedule))), typeof(CarWashingSchedule));
+            dataGridView4.Columns["WashMan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView4.Columns["CarNumber"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView4.Columns["BookedTime"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView4.Columns["WashingType"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView4.Columns["BookedTime"].DefaultCellStyle.Format = "hh:mm tt";
             #endregion
         }
 
@@ -104,17 +128,24 @@ namespace CarScheduleCore
                     var productJsonString = await result.Content.ReadAsStringAsync();
 
                     var data = JsonConvert.DeserializeObject<CarWashingSchedule[]>(productJsonString).ToList();
-
+                    data = data.OrderBy(x => x.BookedTime).ToList();
                     dataGridView1.DataSource = data.Where(x => x.WashingStatus == WashingStatus.New).ToList();
                     dataGridView2.DataSource = data.Where(x => x.WashingStatus == WashingStatus.Washing).ToList();
                     dataGridView3.DataSource = data.Where(x => x.WashingStatus == WashingStatus.Finished).ToList();
+                    dataGridView4.DataSource = data.Where(x => x.WashingStatus == WashingStatus.Late).ToList();
 
                 }
             }
         }
-
-
-
+        private bool Validate()
+        {
+            if (DateTime.Now.Hour < 7 || DateTime.Now.Hour > 16)
+            {
+                MessageBox.Show("Ngoài giờ làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
         private async void UpdateSchedule(CarWashingSchedule schedule)
         {
             using (var client = new HttpClient())
@@ -135,13 +166,10 @@ namespace CarScheduleCore
             lblDate.Text = DateTime.Now.ToString();
 
         }
-
-
         private void button3_Click(object sender, EventArgs e)
         {
             GetAllSchedule();
         }
-
         private void StartWashing_Click(object sender, EventArgs e)
         {
 
@@ -152,7 +180,6 @@ namespace CarScheduleCore
             selected.WashTime = DateTime.Now;
             UpdateSchedule(selected);
         }
-
         private void Finished_Washing_Click(object sender, EventArgs e)
         {
             if (dataGridView2.CurrentRow == null || !Validate()) return;
@@ -161,36 +188,40 @@ namespace CarScheduleCore
             selected.FinishTime = DateTime.Now;
             UpdateSchedule(selected);
         }
-
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
             var selected = (CarWashingSchedule)dataGridView1.CurrentRow.DataBoundItem;
             lblStartCarNumber.Text = selected.CarNumber;
         }
-
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView2.CurrentRow == null) return;
             var selected = (CarWashingSchedule)dataGridView2.CurrentRow.DataBoundItem;
             lblWashingCarNumber.Text = selected.CarNumber;
         }
-        #endregion
-
-        private bool Validate()
-        {
-            if (DateTime.Now.Hour < 7 || DateTime.Now.Hour > 16)
-            {
-                MessageBox.Show("Ngoài giờ làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            return true;
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             GetAllSchedule();
         }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetAllSchedule();
+        }
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //get display name of enum  to datagridview 
+            DataGridView dataGridView = sender as DataGridView;
+            if (dataGridView == null) return;
+            if (dataGridView.Columns[e.ColumnIndex].Name == "WashingType")
+            {
+                e.Value = ((WashingType)e.Value).DisplayName();
+            }
+        }
+
+        #endregion
+
+
     }
 
 

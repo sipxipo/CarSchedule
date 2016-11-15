@@ -8,6 +8,7 @@ namespace CarScheduleCore.Ultility
         public static string CARWASHING_URI = ConfigurationManager.AppSettings["API_URL"].ToString() + "api/carwashing";
         public static string WASHMAN_URI = ConfigurationManager.AppSettings["API_URL"].ToString() + "api/washman";
         public static int TIME_RANGE = int.Parse(ConfigurationManager.AppSettings["TIME_RANGE"]);// minute
+        public static int BREAK_TIME = int.Parse(ConfigurationManager.AppSettings["BREAK_TIME"]);// hour
 
         public static DateTime TimeRoundDown(DateTime input)
         {

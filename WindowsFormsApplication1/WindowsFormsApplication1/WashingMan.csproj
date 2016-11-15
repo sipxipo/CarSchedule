@@ -76,9 +76,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="1477774611_Settings-5.ico" />
-    <Content Include="App.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +90,7 @@
   <ItemGroup>
     <None Include="WashingMan.exe.config">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
