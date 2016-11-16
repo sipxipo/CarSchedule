@@ -331,12 +331,15 @@
             // 
             // dgrid_Schedule
             // 
+            this.dgrid_Schedule.AllowUserToResizeColumns = false;
+            this.dgrid_Schedule.AllowUserToResizeRows = false;
             this.dgrid_Schedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dgrid_Schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_Schedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_Schedule.Location = new System.Drawing.Point(331, 3);
             this.dgrid_Schedule.Name = "dgrid_Schedule";
             this.dgrid_Schedule.RowHeadersVisible = false;
+            this.dgrid_Schedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrid_Schedule.Size = new System.Drawing.Size(760, 671);
             this.dgrid_Schedule.TabIndex = 1;
             this.dgrid_Schedule.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);

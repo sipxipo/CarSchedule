@@ -23,6 +23,7 @@ namespace CarSchedule
         private Color _oldSelectColor;
         private List<CarWashingSchedule> _mainSchedules;
         private TableLayoutPanel _tableLayoutPanel1 = new TableLayoutPanel();
+        private ToolTip _toolTip = new ToolTip();
         public WashManForm WashManForm { get; set; }
         public string[] TimeSlot
         {
@@ -262,6 +263,7 @@ namespace CarSchedule
         {
             if (data != null)
             {
+
                 #region Update TimeSlot Button 
                 foreach (var layout in _tableLayoutPanel1.Controls.OfType<TableLayoutPanel>())
                 {
@@ -283,12 +285,11 @@ namespace CarSchedule
                 {
                     var button = _tableLayoutPanel1.Controls.Find("btn1_" + schedule.BookedTime.ToString("HH:mm"), true).FirstOrDefault();
                     var txtInfo = string.Format("{0}\n{1}\n{2}\n{3}", schedule.CarNumber, cbb_WashMan.Items.OfType<WashMan>().FirstOrDefault(x => x.Id == schedule.WashManId).Name, schedule.GuestStatus.DisplayName(), schedule.WashingType.DisplayName());
-                    ToolTip toolTip = new ToolTip();
+
                     switch (schedule.WashingStatus)
                     {
                         case WashingStatus.Washing:
                             var date = Common.TimeRoundDown(schedule.WashTime ?? DateTime.Now).ToString("HH:mm");
-                            //    var date = Common.TimeRoundDown(DateTime.Now.AddHours(9).AddMinutes(20)).ToString("HH:mm");
                             var currentSlot = data.FirstOrDefault(x => x.BookedTime.ToString("HH:mm") == date && x.WashingStatus == WashingStatus.Late);
 
                             if (currentSlot == null)
@@ -298,7 +299,7 @@ namespace CarSchedule
                                 button1.Text = txtInfo;
                                 button1.ForeColor = Color.White;
                                 button1.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
-                                toolTip.SetToolTip(button1, txtInfo);
+                                _toolTip.SetToolTip(button1, txtInfo);
                             }
                             else
                             {
@@ -310,7 +311,7 @@ namespace CarSchedule
                                 button2.Visible = true;
                                 button2.ForeColor = Color.White;
                                 button2.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
-                                toolTip.SetToolTip(button2, txtInfo);
+                                _toolTip.SetToolTip(button2, txtInfo);
                             }
 
                             break;
@@ -325,9 +326,8 @@ namespace CarSchedule
                                 button1.BackColor = Color.Green;
                                 button1.Text = txtInfo;
                                 button1.ForeColor = Color.White;
-                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
-                                toolTip = new ToolTip();
-                                toolTip.SetToolTip(button1, txtInfo);
+                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;                             
+                                _toolTip.SetToolTip(button1, txtInfo);
                             }
                             else
                             {
@@ -339,7 +339,7 @@ namespace CarSchedule
                                 button2.Visible = true;
                                 button2.ForeColor = Color.White;
                                 button2.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
-                                toolTip.SetToolTip(button2, txtInfo);
+                                _toolTip.SetToolTip(button2, txtInfo);
                             }
                             break;
 
@@ -348,7 +348,7 @@ namespace CarSchedule
                             button.Text = txtInfo;
                             button.ForeColor = Color.White;
                             button.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
-                            toolTip.SetToolTip(button, txtInfo);
+                            _toolTip.SetToolTip(button, txtInfo);
                             break;
 
                         case WashingStatus.Late:
@@ -356,14 +356,14 @@ namespace CarSchedule
                             button.Text = txtInfo;
                             button.ForeColor = Color.White;
                             button.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
-                            toolTip.SetToolTip(button, txtInfo);
+                            _toolTip.SetToolTip(button, txtInfo);
                             break;
                         default:
                             button.BackColor = SystemColors.Control;
                             button.Text = button.Tag.ToString();
                             button.ForeColor = Color.Black;
                             button.Tag = button.Tag.ToString();
-                            toolTip.SetToolTip(button, txtInfo);
+                            _toolTip.SetToolTip(button, txtInfo);
                             break;
 
                     }
