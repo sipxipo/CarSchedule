@@ -331,6 +331,8 @@
             // 
             // dgrid_Schedule
             // 
+            this.dgrid_Schedule.AllowUserToAddRows = false;
+            this.dgrid_Schedule.AllowUserToDeleteRows = false;
             this.dgrid_Schedule.AllowUserToResizeColumns = false;
             this.dgrid_Schedule.AllowUserToResizeRows = false;
             this.dgrid_Schedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;

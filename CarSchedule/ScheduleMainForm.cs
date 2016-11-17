@@ -111,7 +111,7 @@ namespace CarSchedule
             timer2.Start();
         }
 
-        #region Call API  
+        #region Call API  5
 
         public async void GetAllSchedule()
         {
@@ -397,7 +397,7 @@ namespace CarSchedule
         }
         private void CreateTimeSlot()
         {
-            var colNum = 9;
+            var colNum = 10;
             var rowNum = 60 / Common.TIME_RANGE + 1;
             _tableLayoutPanel1.AutoScroll = true;
             _tableLayoutPanel1.AutoSize = true;
@@ -416,7 +416,7 @@ namespace CarSchedule
             for (int i = 0; i < colNum - 1; i++)
             {
                 //add hour label
-                var hour = i + 8 < Common.BREAK_TIME ? (i + 8).ToString("00") : (i + 8 + 1).ToString("00");
+                var hour = (i + 8).ToString("00");
                 _tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90f / colNum));
                 var lbl_h = new Label();
                 lbl_h.AutoSize = true;
