@@ -67,7 +67,9 @@ namespace CarSchedule
             cbb_WashMan_Analysis.ValueMember = washManForm.ComboBoxWashMan.ValueMember;
             cbb_WashMan_Analysis.SelectedValue = -1;
 
-            cbb_WashingType.DataSource = Enum.GetValues(typeof(WashingType));
+            cbb_WashingType.DataSource = EnumHelper.GetDisplayNames(typeof(WashingType));
+            cbb_WashingType.DisplayMember = "Value";
+            cbb_WashingType.ValueMember = "Key";
 
 
             #region Booked Schedule GridView 
@@ -79,7 +81,7 @@ namespace CarSchedule
             dgrid_Schedule.Columns.Add("WashTime", "Giờ Rửa");
             dgrid_Schedule.Columns.Add("FinishTime", "Kết Thúc");
             dgrid_Schedule.Columns.Add("WashingType", "Loại");
- 
+
             dgrid_Schedule.Columns["Date"].DataPropertyName = "BookedTime";
             dgrid_Schedule.Columns["WashMan"].DataPropertyName = "WashMan_Name";
             dgrid_Schedule.Columns["CarNumber"].DataPropertyName = "CarNumber";
@@ -326,7 +328,7 @@ namespace CarSchedule
                                 button1.BackColor = Color.Green;
                                 button1.Text = txtInfo;
                                 button1.ForeColor = Color.White;
-                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;                             
+                                button1.Tag = button.Tag.ToString() + ":" + schedule.Id + ":" + schedule.WashManId;
                                 _toolTip.SetToolTip(button1, txtInfo);
                             }
                             else
@@ -624,8 +626,9 @@ namespace CarSchedule
         {
             SearchSchedule(new SearchCarWashingSchedule
             {
+
                 CarNumber = txtCarNumber.Text,
-                WashingType = ((WashingType)cbb_WashingType.SelectedItem),
+                WashingType = (WashingType)((KeyValuePair<Enum, string>)cbb_WashingType.SelectedItem).Key,
                 WashManId = ((WashMan)cbb_WashMan_Analysis.SelectedItem).Id,
                 BookedTime = dPick_Date.Value.Date,
                 IsDate = chk_Date.Checked,
@@ -729,6 +732,7 @@ namespace CarSchedule
         {
             GetAllSchedule();
             UpdateLateSchedule();
+            GC.Collect();
         }
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

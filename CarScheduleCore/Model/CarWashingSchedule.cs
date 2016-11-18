@@ -1,17 +1,8 @@
-﻿using System;
+﻿using CarScheduleCore.Ultility;
+using System;
 
 namespace CarScheduleCore.Model
 {
-    public class EnumDisplayNameAttribute : Attribute
-    {
-        private string _displayName;
-        public string DisplayName
-        {
-            get { return _displayName; }
-            set { _displayName = value; }
-        }
-    }
-
     public enum GuestStatus
     {
         [EnumDisplayName(DisplayName = "Khách đang chờ")]
