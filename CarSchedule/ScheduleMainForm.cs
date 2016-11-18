@@ -108,7 +108,6 @@ namespace CarSchedule
 
             #endregion
 
-
             timer1.Start();
             timer2.Start();
         }

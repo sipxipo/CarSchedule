@@ -42,6 +42,7 @@ namespace CarSchedule
         private void button1_Click(object sender, EventArgs e)
         {
             var mainForm = new ScheduleMainForm(this);
+            this.Hide();
             mainForm.ShowDialog();
             this.Close();
         }
