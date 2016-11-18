@@ -79,7 +79,7 @@ namespace CarSchedule
             dgrid_Schedule.Columns.Add("WashTime", "Giờ Rửa");
             dgrid_Schedule.Columns.Add("FinishTime", "Kết Thúc");
             dgrid_Schedule.Columns.Add("WashingType", "Loại");
-
+ 
             dgrid_Schedule.Columns["Date"].DataPropertyName = "BookedTime";
             dgrid_Schedule.Columns["WashMan"].DataPropertyName = "WashMan_Name";
             dgrid_Schedule.Columns["CarNumber"].DataPropertyName = "CarNumber";
@@ -111,7 +111,7 @@ namespace CarSchedule
             timer2.Start();
         }
 
-        #region Call API  5
+        #region Call API  
 
         public async void GetAllSchedule()
         {
@@ -207,7 +207,7 @@ namespace CarSchedule
             using (var client = new HttpClient())
             {
                 //update late schedule
-                foreach (var schedule in _mainSchedules.Where(x => x.BookedTime.AddMinutes(2) < DateTime.Now && x.WashingStatus == WashingStatus.New))
+                foreach (var schedule in _mainSchedules.Where(x => x.BookedTime.AddMinutes(Common.TIME_RANGE) < DateTime.Now && x.WashingStatus == WashingStatus.New))
                 {
                     schedule.WashingStatus = WashingStatus.Late;
                     var updateContent = new StringContent(JsonConvert.SerializeObject(schedule), Encoding.UTF8, "application/json");
@@ -290,7 +290,7 @@ namespace CarSchedule
                     {
                         case WashingStatus.Washing:
                             var date = Common.TimeRoundDown(schedule.WashTime ?? DateTime.Now).ToString("HH:mm");
-                            var currentSlot = data.FirstOrDefault(x => x.BookedTime.ToString("HH:mm") == date && x.WashingStatus == WashingStatus.Late);
+                            var currentSlot = data.FirstOrDefault(x => x.BookedTime.ToString("HH:mm") == date && (x.WashingStatus != WashingStatus.Washing && x.WashingStatus != WashingStatus.Finished));
 
                             if (currentSlot == null)
                             {
@@ -317,8 +317,8 @@ namespace CarSchedule
                             break;
 
                         case WashingStatus.Finished:
-                            date = Common.TimeRoundDown(schedule.FinishTime ?? DateTime.Now).ToString("HH:mm");
-                            currentSlot = data.FirstOrDefault(x => x.BookedTime.ToString("HH:mm") == date && x.WashingStatus == WashingStatus.Late);
+                            date = Common.TimeRoundDown(schedule.WashTime ?? DateTime.Now).ToString("HH:mm");
+                            currentSlot = data.FirstOrDefault(x => x.BookedTime.ToString("HH:mm") == date && x.WashingStatus != WashingStatus.Finished);
 
                             if (currentSlot == null)
                             {

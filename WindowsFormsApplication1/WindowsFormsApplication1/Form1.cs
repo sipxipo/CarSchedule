@@ -41,7 +41,7 @@ namespace CarScheduleCore
             dataGridView1.Columns["BookedTime"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns["WashingType"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns["BookedTime"].DefaultCellStyle.Format = "hh:mm tt";
-         
+
             #endregion
 
             #region Washing Schedule GridView 
@@ -139,7 +139,7 @@ namespace CarScheduleCore
         }
         private bool Validate()
         {
-            if (DateTime.Now.Hour < 7 || DateTime.Now.Hour > 16)
+            if (DateTime.Now.Hour < 8 || DateTime.Now.Hour > 16)
             {
                 MessageBox.Show("Ngoài giờ làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -172,9 +172,8 @@ namespace CarScheduleCore
         }
         private void StartWashing_Click(object sender, EventArgs e)
         {
-
-            if (dataGridView1.CurrentRow == null || !Validate()) return;
-
+            if (!Validate()) return;
+            if (dataGridView1.CurrentRow == null) return;
             var selected = (CarWashingSchedule)dataGridView1.CurrentRow.DataBoundItem;
             selected.WashingStatus = WashingStatus.Washing;
             selected.WashTime = DateTime.Now;
@@ -182,12 +181,15 @@ namespace CarScheduleCore
         }
         private void Finished_Washing_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow == null || !Validate()) return;
+            if (!Validate()) return;
+            if (dataGridView2.CurrentRow == null) return;
             var selected = (CarWashingSchedule)dataGridView2.CurrentRow.DataBoundItem;
             selected.WashingStatus = WashingStatus.Finished;
             selected.FinishTime = DateTime.Now;
             UpdateSchedule(selected);
         }
+
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
