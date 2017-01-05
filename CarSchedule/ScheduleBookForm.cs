@@ -1,4 +1,4 @@
-﻿using CarScheduleCore.Model;
+﻿using CarScheduleCore.Models;
 using CarScheduleCore.Ultility;
 using Newtonsoft.Json;
 using System;

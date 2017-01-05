@@ -340,6 +340,7 @@
             this.dgrid_Schedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_Schedule.Location = new System.Drawing.Point(331, 3);
             this.dgrid_Schedule.Name = "dgrid_Schedule";
+            this.dgrid_Schedule.ReadOnly = true;
             this.dgrid_Schedule.RowHeadersVisible = false;
             this.dgrid_Schedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrid_Schedule.Size = new System.Drawing.Size(760, 671);
